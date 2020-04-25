@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export ../docs/ --legacy",
+    "export": "sapper export ../docs/ && echo greecatpiano.com > ../docs/CNAME",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
