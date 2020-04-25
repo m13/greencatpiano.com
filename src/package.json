@@ -1,11 +1,11 @@
 {
   "name": "greencatpiano.com",
   "description": "greencatpiano.com",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "export": "sapper export ../docs/ && echo greencatpiano.com > ../docs/CNAME",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
