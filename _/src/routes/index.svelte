@@ -1,46 +1,53 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script>
+    import {onMount} from 'svelte';
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+    onMount(() => {
+        const disqus_config = function () {
+            this.page.url = 'https://greencatpiano.com/';
+            this.page.identifier = 'home';
+        };
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://greencatpiano.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    });
+</script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+    <title>Green Cat Piano</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<br>
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
+<div class="container">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CiNhsOwMp4w?rel=0"
+                title="Music and Silence Game" allowfullscreen></iframe>
+    </div>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+    <div class="lead p-2 m-5">
+        <p>This activity is for kids of any age.</p>
+
+        <p>If you’re doing it with a baby, you can bounce you baby on your lap following the music or you can try giving
+            him
+            an instrument appropriate for his age, an example could be some shakers, bells or drums.</p>
+        <p>If you don’t have any instruments, don’t worry! You can make your own, find a small container and fill it
+            with
+            rice, beans or even coins to make different and fun sounds, you can tape the container to make sure is
+            completely sealed and safe for the baby.</p>
+        <p>You can also use a small bucket as drums.</p>
+        <p>Use your imagination to create different instruments.</p>
+
+        <p>For older kids, you can also use home made instruments and involve them in the creation of them or simply
+            dance
+            and move around with the music.</p>
+    </div>
+</div>
+
+<div class="container border border-success">
+    <div id="disqus_thread"></div>
+</div>
+
+<br>
