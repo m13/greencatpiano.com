@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+_/node_modules/
+_/src/node_modules/@sapper/
+_/cypress/screenshots/
+_/__sapper__/
+
+
