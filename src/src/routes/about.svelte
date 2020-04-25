@@ -4,12 +4,12 @@
 
 <br>
 
-<div class="container">
+<div class="container gaegu">
     <div class="p-3">
         <img class="img-fluid mx-auto d-block rounded" src="friends.jpg" alt="Responsive image">
     </div>
 
-    <div class="lead p-2 m-5">
+    <div class="p-2 m-5">
         <p>Hello! Thank you for visiting our page.</p>
 
         <p>My name is Rumi and I’m a Music and Piano Teacher. I decided to start this series of videos and posts to

@@ -21,13 +21,13 @@
 
 <br>
 
-<div class="container">
+<div class="container gaegu">
     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CiNhsOwMp4w?rel=0"
                 title="Music and Silence Game" allowfullscreen></iframe>
     </div>
 
-    <div class="lead p-2 m-5">
+    <div class="p-2 m-5">
         <p>This activity is for kids of any age.</p>
 
         <p>If you’re doing it with a baby, you can bounce you baby on your lap following the music or you can try giving
