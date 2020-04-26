@@ -4,9 +4,9 @@ You can find all the sourcecode inside `./src/`. Published files on `./docs/`.
 
 Libraries used:
 - Sapper
-- GetBootstrap
+- Bootstrap
 - Google Analytics
-- Disqus
+- Facebook comments plugin
 
 
 # how to create a new version

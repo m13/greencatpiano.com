@@ -3,6 +3,8 @@
 <head>
 	<meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta property="fb:app_id" content="564306554199993" />
+<!--	<meta property="fb:admins" content="10214989057184845"/>-->
 	%sapper.base%
 
 <!--	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>-->
@@ -15,10 +17,12 @@
 	%sapper.head%
 </head>
 <body>
+	<!-- Bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164509078-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -27,8 +31,12 @@
 		gtag('config', 'UA-164509078-1');
 	</script>
 
-	<div id='sapper'>%sapper.html%</div>
+	<!-- Facebook Comments -->
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=564306554199993"></script>
 
+	<!-- Sapper -->
+	<div id='sapper'>%sapper.html%</div>
 	%sapper.scripts%
 </body>
 </html>

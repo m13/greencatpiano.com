@@ -2,16 +2,7 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        const disqus_config = function () {
-            this.page.url = 'https://greencatpiano.com/';
-            this.page.identifier = 'home';
-        };
-        (function () {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://greencatpiano.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
+        FB.XFBML.parse(document.getElementById('fb-comments'));
     });
 </script>
 
@@ -47,7 +38,7 @@
 </div>
 
 <div class="container border border-success">
-    <div id="disqus_thread"></div>
+    <div class="fb-comments" data-href="https://greencatpiano.com/" data-numposts="5" data-width="100%"></div>
 </div>
 
 <br>
