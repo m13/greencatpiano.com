@@ -27,7 +27,7 @@
                 title="Music and Silence Game" allowfullscreen></iframe>
     </div>
 
-    <div class="p-2 m-5">
+    <div class="p-3">
         <p>This activity is for kids of any age.</p>
 
         <p>If you’re doing it with a baby, you can bounce you baby on your lap following the music or you can try giving
