@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "about": "NOSOTROS",
+    "language": "IDIOMA"
+  },
+  "logo": {
+    "website": "Esta es una página web sobre Educación Musical, dedicada a padres e hijos donde juntos podrán aprender música y piano a través de divertidos juegos y canciones.",
+    "together": "Aquí encontrarás videos, actividades, ideas de juegos y más! Vamos a divertirnos con la música juntos!"
+  },
+  "video": {
+    "updated": "Actualizado el"
+  },
+  "about": {
+    "1": "Hola! Muchas gracias por visitar nuestra página.",
+    "2": "Mi nombre es Rumi y soy maestra de Música y Piano. Decidí empezar esta serie de videos y publicaciones para compartir con todos mi amor por la música y compartir el conocimiento que he adquirido durante años.",
+    "3": "Decidí combinar las tres cosas que más me gusta hacer, que son: dibujar, hacer música y dar clases. Y fue así como nació Green Cat Piano.",
+    "4": "Mi objetivo es que todos puedan disfrutar el hermoso y divertido proceso que puede llegar a ser el aprender música, quisiera que tu y tus hijos tengan estas herramientas por el resto de su vida.",
+    "5": "Esta página está dedicada en especial a padres e hijos pero también a cualquier persona que le gusten los juegos y divertirse con la música. No existe edad límite para aprender."
+  }
+}

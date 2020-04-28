@@ -1,7 +1,7 @@
 <script>
-	import Logo from './_components/Logo.svelte';
-	import NavTop from './_components/NavTop.svelte';
-	import NavBottom from './_components/NavBottom.svelte';
+	import Logo from './_component/Logo.svelte';
+	import NavTop from './_component/NavTop.svelte';
+	import NavBottom from './_component/NavBottom.svelte';
 
 	export let segment;
 </script>
