@@ -1,0 +1,26 @@
+{
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "ja": "日本語"
+  },
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "language": "LANGUAGE"
+  },
+  "logo": {
+    "website": "A Music Education Website dedicated to parents and kids who want to learn together music and piano through fun games and songs.",
+    "together": "You will find videos, activities, games ideas and more! Let’s enjoy music together!"
+  },
+  "about": {
+    "1": "Hello! Thank you for visiting our page.",
+    "2": "My name is Rumi and I’m a Music and Piano Teacher. I decided to start this series of videos and posts to share with everybody my love for music and share what I have learned through my teaching experience.",
+    "3": "I decided to combine all the things that I love: drawing, making music and teaching and that's how Green Cat Piano was born.",
+    "4": "My goal is to make everybody enjoy the beautiful and fun journey of learning music and give you these tools for the rest of your and your kids life.",
+    "5": "Is dedicated to parents and kids essentially but also to anyone who enjoys games and having fun with music there is no limit age for learning."
+  },
+  "video": {
+    "updated": "Updated at"
+  }
+}

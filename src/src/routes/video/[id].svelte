@@ -2,7 +2,7 @@
     import {addMessages} from 'svelte-i18n';
 
     export async function preload({params, query}) {
-        const res = await this.fetch(`video/music-and-silence-game.json`);
+        const res = await this.fetch(`video/${params.id}.json`);
         const video = await res.json();
 
         ['en', 'es'].forEach((locale) => addMessages(locale, {[video.id]: video[locale]}));
@@ -16,7 +16,7 @@
     }
 </script>
 <script>
-    import Video from './_component/Video.svelte';
+    import Video from '../_component/Video.svelte';
 
     export let video;
 </script>
