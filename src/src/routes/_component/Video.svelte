@@ -5,7 +5,9 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        FB.XFBML.parse(document.getElementById('fb-comments'));
+        if ('FB' in window) {
+            FB.XFBML.parse(document.getElementById('fb-comments'));
+        }
     });
 
     ['en', 'es'].forEach((locale) => addMessages(locale, {[video.id]: video[locale]}));
