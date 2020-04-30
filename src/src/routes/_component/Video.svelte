@@ -1,7 +1,7 @@
 <script>
     export let video;
 
-    import {addMessages, _, dictionary} from 'svelte-i18n';
+    import {addMessages, _} from 'svelte-i18n';
     import {onMount} from 'svelte';
 
     onMount(() => {
