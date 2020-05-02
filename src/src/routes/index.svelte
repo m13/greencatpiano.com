@@ -3,11 +3,12 @@
 
     export async function preload({params, query}) {
         const res = await this.fetch(`video.json`);
-        const videos = await res.json();
+        let videos = await res.json();
 
         videos.forEach((video) => {
             ['en', 'es'].forEach((locale) => addMessages(locale, {[video.id]: video[locale]}));
         });
+        videos = videos.sort((a, b) => new Date(a.date) < new Date(b.date));
         // await waitLocale();
 
         if (res.status === 200) {
