@@ -37,7 +37,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <a href="/video/{video.id}">
-                    <img src="http://img.youtube.com/vi/{video.youtube_id}/0.jpg" class="card-img-top"
+                    <img src="https://img.youtube.com/vi/{video.youtube_id}/0.jpg" class="card-img-top"
                          alt="Video: {$_(`${video.id}.title`)}">
                 </a>
                 <div class="card-body">
