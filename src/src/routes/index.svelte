@@ -8,7 +8,6 @@
         videos.forEach((video) => {
             ['en', 'es'].forEach((locale) => addMessages(locale, {[video.id]: video[locale]}));
         });
-        videos = videos.sort((a, b) => new Date(a.date) < new Date(b.date));
         // await waitLocale();
 
         if (res.status === 200) {
@@ -26,8 +25,6 @@
     videos.forEach((video) => {
         ['en', 'es'].forEach((locale) => addMessages(locale, {[video.id]: video[locale]}));
     });
-
-    videos = videos.sort((a, b) => new Date(a.date) < new Date(b.date));
 </script>
 
 <div class="container">
