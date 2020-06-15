@@ -10,6 +10,13 @@
         <li class="nav-item font-weight-bold" class:active="{segment === undefined}">
             <a class="nav-link" href="/?lang={$locale}">{$_('nav.home')}</a>
         </li>
+        <li class="nav-item font-weight-bold dropdown">
+            <a href="#/" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$_('nav.game.title')}</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/game/memory-1">{$_('nav.game.memory-1')}</a>
+                <a class="dropdown-item" href="/game/memory-2">{$_('nav.game.memory-2')}</a>
+            </div>
+        </li>
         <li class="nav-item font-weight-bold" class:active="{segment === 'about'}">
             <a class="nav-link" href="/about?lang={$locale}">{$_('nav.about')}</a>
         </li>
