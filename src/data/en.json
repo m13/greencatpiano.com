@@ -7,7 +7,12 @@
   "nav": {
     "home": "HOME",
     "about": "ABOUT",
-    "language": "LANGUAGE"
+    "language": "LANGUAGE",
+    "game": {
+      "title": "GAMES",
+      "memory-1": "Easy Memory Cards",
+      "memory-2": "Sound Memory Cards"
+    }
   },
   "logo": {
     "website": "A Music Education Website dedicated to parents and kids who want to learn together music and piano through fun games and songs.",
