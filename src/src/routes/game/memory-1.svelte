@@ -2,6 +2,8 @@
     import {_} from 'svelte-i18n';
 
     let imgDefaultUrl = 'game/memory-1-box.jpg';
+    let doneUrl = 'game/memory-2-empty.jpg';
+
     let cards = [
         {
             id: 'cat',
@@ -45,7 +47,7 @@
                     .map((a) => ({sort: Math.random(), value: a}))
                     .sort((a, b) => a.sort - b.sort)
                     .map((a) => a.value);
-        }, 2000);
+        }, 1000);
     }
 
     function checkIfRight(id) {
@@ -59,6 +61,9 @@
                     // right
                     (new Audio('game/memory-1-right.m4a')).play();
                     remaining -= 1;
+                    console.log('left:', remaining);
+                    document.getElementById(`card-${id}`).src = doneUrl;
+                    document.getElementById(`card-${selected}`).src = doneUrl;
                     if (remaining <= 0) {
                         startAgain();
                     }
@@ -72,7 +77,7 @@
             } else {
                 selected = id;
             }
-        }, 1000);
+        }, 3000);
     }
 
     function checkCard(id) {
@@ -92,7 +97,7 @@
 </div>
 
 <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
+    <div class="row row-cols-3">
         {#each cards as card, index}
             <div class="col mb-4">
                 <div class="h-100 w-100">

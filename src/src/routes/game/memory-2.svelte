@@ -3,6 +3,8 @@
 
     let imgDefaultUrl = 'game/memory-1-box.jpg';
     let checkedUrl = 'game/memory-2-box.jpg';
+    let doneUrl = 'game/memory-2-empty.jpg';
+
     let cards = [
         {
             id: 'cat',
@@ -60,16 +62,27 @@
                 (new Audio('game/memory-1-right.m4a')).play();
                 remaining -= 1;
                 console.log('left:', remaining);
-                if (remaining <= 0) {
-                    startAgain();
-                }
+                disabled = true;
+                setTimeout(async () => {
+                    disabled = false;
+                    document.getElementById(`card-${id}`).src = doneUrl;
+                    document.getElementById(`card-${selected}`).src = doneUrl;
+                    selected = null;
+                    if (remaining <= 0) {
+                        startAgain();
+                    }
+                }, 3000);
             } else {
                 // wrong
-                document.getElementById(`card-${id}`).src = imgDefaultUrl;
-                document.getElementById(`card-${selected}`).src = imgDefaultUrl;
+                disabled = true;
+                setTimeout(async () => {
+                    disabled = false;
+                    document.getElementById(`card-${id}`).src = imgDefaultUrl;
+                    document.getElementById(`card-${selected}`).src = imgDefaultUrl;
+                    selected = null;
+                }, 3000);
                 (new Audio('game/memory-1-wrong.m4a')).play();
             }
-            selected = null;
         }, 1000);
     }
 
@@ -80,13 +93,13 @@
             console.log('showCards');
 
             if (selected !== null) {
-                document.getElementById(`card-${id}`).src  = cards[id].imgUrl;
-                document.getElementById(`card-${selected}`).src  = cards[selected].imgUrl;
+                document.getElementById(`card-${id}`).src = cards[id].imgUrl;
+                document.getElementById(`card-${selected}`).src = cards[selected].imgUrl;
                 checkIfRight(id);
             } else {
                 selected = id;
             }
-        }, 1000);
+        }, 3000);
     }
 
     function checkCard(id) {
@@ -106,7 +119,7 @@
 </div>
 
 <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
+    <div class="row row-cols-3">
         {#each cards as card, index}
             <div class="col mb-4">
                 <div class="h-100 w-100">
