@@ -59,6 +59,6 @@
 </div>
 
 <div class="container jumbotron">
-    <h1>Subscribe to the newsletter (Only English)</h1>
+    <h1>Subscribe to the newsletter</h1>
     <div id="newsletter"></div>
 </div>
