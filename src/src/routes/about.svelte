@@ -10,7 +10,7 @@
 
 <div class="container gaegu">
     <div class="p-3">
-        <img class="img-fluid mx-auto d-block rounded" src="img/friends.gif" alt="Responsive image">
+        <img class="img-fluid mx-auto d-block rounded" src="img/friends.gif" alt="Applause">
     </div>
 
     <div class="p-3 text-justify">
