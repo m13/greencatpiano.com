@@ -9,17 +9,17 @@
         {
             id: 'cat',
             imgUrl: 'game/memory-1-cat.jpg',
-            soundUrl: 'game/memory-1-cat.m4a'
+            soundUrl: 'game/memory-1-cat.mp3'
         },
         {
             id: 'lion',
             imgUrl: 'game/memory-1-lion.jpg',
-            soundUrl: 'game/memory-1-lion.m4a'
+            soundUrl: 'game/memory-1-lion.mp3'
         },
         {
             id: 'mouse',
             imgUrl: 'game/memory-1-mouse.jpg',
-            soundUrl: 'game/memory-1-mouse.m4a'
+            soundUrl: 'game/memory-1-mouse.mp3'
         }
     ];
     cards = cards.concat(cards);
@@ -34,7 +34,14 @@
 
     function startAgain() {
         disabled = true;
-        setTimeout(async () => {
+
+        let vid = document.getElementById("myVideo");
+        let cards = document.getElementById("myCards");
+        function myHandler(e) {
+            vid.style.display = "none";
+            cards.style.display = "";
+
+            // code
             disabled = false;
             console.log('startAgain');
 
@@ -48,7 +55,16 @@
                     .map((a) => ({sort: Math.random(), value: a}))
                     .sort((a, b) => a.sort - b.sort)
                     .map((a) => a.value);
-        }, 2000);
+        }
+        vid.addEventListener('ended', myHandler, false);
+        vid.style.display = "";
+        cards.style.display = "none";
+        vid.autoplay = true;
+        vid.load();
+    }
+
+    async function playVideo() {
+
     }
 
     function checkIfRight(id) {
@@ -59,7 +75,7 @@
 
             if (cards[id].id === cards[selected].id) {
                 // right
-                (new Audio('game/memory-1-right.m4a')).play();
+                (new Audio('game/memory-1-right.mp3')).play();
                 remaining -= 1;
                 console.log('left:', remaining);
                 disabled = true;
@@ -69,6 +85,7 @@
                     document.getElementById(`card-${selected}`).src = doneUrl;
                     selected = null;
                     if (remaining <= 0) {
+                        await playVideo();
                         startAgain();
                     }
                 }, 3000);
@@ -81,7 +98,7 @@
                     document.getElementById(`card-${selected}`).src = imgDefaultUrl;
                     selected = null;
                 }, 3000);
-                (new Audio('game/memory-1-wrong.m4a')).play();
+                (new Audio('game/memory-1-wrong.mp3')).play();
             }
         }, 1000);
     }
@@ -119,7 +136,11 @@
 </div>
 
 <div class="container">
-    <div class="row row-cols-3">
+    <video id="myVideo" class="container" style="display:none;">
+        <source src="game/corazones.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="myCards" class="row row-cols-3">
         {#each cards as card, index}
             <div class="col mb-4">
                 <div class="h-100 w-100">
@@ -132,5 +153,15 @@
 </div>
 
 <div class="container">
-    <p>Focus your attention on what sound is listening.</p>
+    <h1>Game Rules:</h1>
+    <ol>
+        <li>Choose a card and listen carefully</li>
+        <li>Find the matching sound card</li>
+    </ol>
+
+    <h1>Reglas del juego:</h1>
+    <ol>
+        <li>Elige una carta y escucha cuidadosamente</li>
+        <li>Encuentra la carta con el mismo sonido</li>
+    </ol>
 </div>
