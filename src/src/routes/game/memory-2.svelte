@@ -35,11 +35,11 @@
     function startAgain() {
         disabled = true;
 
-        let vid = document.getElementById("myVideo");
-        let cards = document.getElementById("myCards");
+        let myVid = document.getElementById("myVideo");
+        let myCards = document.getElementById("myCards");
         function myHandler(e) {
-            vid.style.display = "none";
-            cards.style.display = "";
+            myVid.style.display = 'none';
+            myCards.style.display = '';
 
             // code
             disabled = false;
@@ -56,15 +56,11 @@
                     .sort((a, b) => a.sort - b.sort)
                     .map((a) => a.value);
         }
-        vid.addEventListener('ended', myHandler, false);
-        vid.style.display = "";
-        cards.style.display = "none";
-        vid.autoplay = true;
-        vid.load();
-    }
-
-    async function playVideo() {
-
+        myVid.addEventListener('ended', myHandler, false);
+        myVid.style.display = '';
+        myCards.style.display = 'none';
+        myVid.autoplay = true;
+        myVid.load();
     }
 
     function checkIfRight(id) {
@@ -85,7 +81,6 @@
                     document.getElementById(`card-${selected}`).src = doneUrl;
                     selected = null;
                     if (remaining <= 0) {
-                        await playVideo();
                         startAgain();
                     }
                 }, 3000);
