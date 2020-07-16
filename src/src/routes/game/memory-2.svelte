@@ -8,18 +8,15 @@
     let cards = [
         {
             id: 'cat',
-            imgUrl: 'game/memory-1-cat.jpg',
-            soundUrl: 'game/memory-1-cat.mp3'
+            imgUrl: 'game/memory-1-cat.jpg'
         },
         {
             id: 'lion',
-            imgUrl: 'game/memory-1-lion.jpg',
-            soundUrl: 'game/memory-1-lion.mp3'
+            imgUrl: 'game/memory-1-lion.jpg'
         },
         {
             id: 'mouse',
-            imgUrl: 'game/memory-1-mouse.jpg',
-            soundUrl: 'game/memory-1-mouse.mp3'
+            imgUrl: 'game/memory-1-mouse.jpg'
         }
     ];
     cards = cards.concat(cards);
@@ -37,6 +34,7 @@
 
         let myVid = document.getElementById("myVideo");
         let myCards = document.getElementById("myCards");
+
         function myHandler(e) {
             myVid.style.display = 'none';
             myCards.style.display = '';
@@ -56,11 +54,12 @@
                     .sort((a, b) => a.sort - b.sort)
                     .map((a) => a.value);
         }
+
         myVid.addEventListener('ended', myHandler, false);
         myVid.style.display = '';
         myCards.style.display = 'none';
         myVid.autoplay = true;
-        myVid.load();
+        myVid.load();  // 4 seconds
     }
 
     function checkIfRight(id) {
@@ -71,7 +70,7 @@
 
             if (cards[id].id === cards[selected].id) {
                 // right
-                (new Audio('game/memory-1-right.mp3')).play();
+                (document.getElementById('right')).play(); // 2 seconds
                 remaining -= 1;
                 console.log('left:', remaining);
                 disabled = true;
@@ -83,7 +82,7 @@
                     if (remaining <= 0) {
                         startAgain();
                     }
-                }, 3000);
+                }, 2000);
             } else {
                 // wrong
                 disabled = true;
@@ -92,8 +91,8 @@
                     document.getElementById(`card-${id}`).src = imgDefaultUrl;
                     document.getElementById(`card-${selected}`).src = imgDefaultUrl;
                     selected = null;
-                }, 3000);
-                (new Audio('game/memory-1-wrong.mp3')).play();
+                }, 2000);
+                (document.getElementById('wrong')).play(); // 1 second
             }
         }, 1000);
     }
@@ -111,7 +110,7 @@
             } else {
                 selected = id;
             }
-        }, 3000);
+        }, 2000);
     }
 
     function checkCard(id) {
@@ -121,7 +120,7 @@
         if (!card.src.includes(imgDefaultUrl)) return;
 
         card.src = checkedUrl;
-        (new Audio(cards[id].soundUrl)).play();
+        (document.getElementById(cards[id].id)).play(); // 2 seconds
         showCards(id);
     }
 </script>
@@ -131,10 +130,16 @@
 </div>
 
 <div class="container">
+    <audio id="right" preload="auto"><source src="game/memory-1-right.mp3" type="audio/mpeg"></audio>
+    <audio id="wrong" preload="auto"><source src="game/memory-1-wrong.mp3" type="audio/mpeg"></audio>
+    <audio id="cat" preload="auto"><source src="game/memory-1-cat.mp3" type="audio/mpeg"></audio>
+    <audio id="mouse" preload="auto"><source src="game/memory-1-mouse.mp3" type="audio/mpeg"></audio>
+    <audio id="lion" preload="auto"><source src="game/memory-1-lion.mp3" type="audio/mpeg"></audio>
+
     <video id="myVideo" class="container" style="display:none;">
         <source src="game/corazones.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
+
     <div id="myCards" class="row row-cols-3">
         {#each cards as card, index}
             <div class="col mb-4">
