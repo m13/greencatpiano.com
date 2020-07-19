@@ -30,17 +30,15 @@
     let disabled = false;
 
     function startAgain() {
-        disabled = true;
 
         let myVid = document.getElementById("myVideo");
         let myCards = document.getElementById("myCards");
 
-        function myHandler(e) {
+        myVid.onended = () => {
             myVid.style.display = 'none';
             myCards.style.display = '';
 
             // code
-            disabled = false;
             console.log('startAgain');
 
             [...Array(6).keys()].forEach((id) => {
@@ -55,7 +53,6 @@
                     .map((a) => a.value);
         }
 
-        myVid.addEventListener('ended', myHandler, false);
         myVid.style.display = '';
         myCards.style.display = 'none';
         myVid.autoplay = true;
@@ -63,54 +60,48 @@
     }
 
     function checkIfRight(id) {
-        disabled = true;
         setTimeout(async () => {
-            disabled = false;
             console.log('checkIfRight');
 
             if (cards[id].id === cards[selected].id) {
                 // right
-                (document.getElementById('right')).play(); // 2 seconds
                 remaining -= 1;
                 console.log('left:', remaining);
-                disabled = true;
-                setTimeout(async () => {
-                    disabled = false;
+                const e = document.getElementById('right');
+                e.onended = () => {
                     document.getElementById(`card-${id}`).src = doneUrl;
                     document.getElementById(`card-${selected}`).src = doneUrl;
                     selected = null;
                     if (remaining <= 0) {
                         startAgain();
                     }
-                }, 2000);
+                    disabled = false;
+                }
+                e.play(); // 2 seconds
             } else {
                 // wrong
-                disabled = true;
-                setTimeout(async () => {
-                    disabled = false;
+                const e = document.getElementById('wrong');
+                e.onended = () => {
                     document.getElementById(`card-${id}`).src = imgDefaultUrl;
                     document.getElementById(`card-${selected}`).src = imgDefaultUrl;
                     selected = null;
-                }, 2000);
-                (document.getElementById('wrong')).play(); // 1 second
+                    disabled = false;
+                }
+                e.play(); // 1 second
             }
         }, 1000);
     }
 
     function showCards(id) {
-        disabled = true;
-        setTimeout(async () => {
+        console.log('showCards');
+        if (selected !== null) {
+            document.getElementById(`card-${id}`).src = cards[id].imgUrl;
+            document.getElementById(`card-${selected}`).src = cards[selected].imgUrl;
+            checkIfRight(id);
+        } else {
+            selected = id;
             disabled = false;
-            console.log('showCards');
-
-            if (selected !== null) {
-                document.getElementById(`card-${id}`).src = cards[id].imgUrl;
-                document.getElementById(`card-${selected}`).src = cards[selected].imgUrl;
-                checkIfRight(id);
-            } else {
-                selected = id;
-            }
-        }, 2000);
+        }
     }
 
     function checkCard(id) {
@@ -119,9 +110,13 @@
         const card = document.getElementById(`card-${id}`);
         if (!card.src.includes(imgDefaultUrl)) return;
 
+        disabled = true;
         card.src = checkedUrl;
-        (document.getElementById(cards[id].id)).play(); // 2 seconds
-        showCards(id);
+        const e = document.getElementById(cards[id].id);
+        e.onended = () => {
+            showCards(id);
+        }
+        e.play(); // 2 seconds
     }
 </script>
 
