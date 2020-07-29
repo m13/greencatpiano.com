@@ -11,6 +11,14 @@
             <a class="nav-link" href="/?lang={$locale}">{$_('nav.home')}</a>
         </li>
         <li class="nav-item font-weight-bold dropdown">
+            <a href="#/" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$_('nav.videos.title')}</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/videos/game">{$_('nav.videos.game')}</a>
+                <a class="dropdown-item" href="/videos/song">{$_('nav.videos.song')}</a>
+                <a class="dropdown-item" href="/videos/relax">{$_('nav.videos.relax')}</a>
+            </div>
+        </li>
+        <li class="nav-item font-weight-bold dropdown">
             <a href="#/" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$_('nav.game.title')}</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/game/memory-1">{$_('nav.game.memory-1')}</a>

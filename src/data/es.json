@@ -2,7 +2,18 @@
   "nav": {
     "home": "INICIO",
     "about": "NOSOTROS",
-    "language": "IDIOMA"
+    "language": "IDIOMA",
+    "videos": {
+      "title": "VIDEOS",
+      "game": "Juegos",
+      "song": "Canciones",
+      "relax": "Relax"
+    },
+    "game": {
+      "title": "JUEGOS",
+      "memory-1": "Juego de memoria facil",
+      "memory-2": "Juego de memoria sonoro"
+    }
   },
   "logo": {
     "website": "Esta es una página web sobre Educación Musical, dedicada a padres e hijos donde juntos podrán aprender música y piano a través de divertidos juegos y canciones.",

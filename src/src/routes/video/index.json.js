@@ -4,6 +4,7 @@ const contents = JSON.stringify(
   videos()
     .map(video => ({
       id: video.id,
+      category: video.category,
       youtube_id: video.youtube_id,
       date: video.date,
       en: {title: video.en.title},
