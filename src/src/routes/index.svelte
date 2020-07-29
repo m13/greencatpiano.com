@@ -49,9 +49,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{$_(`${video.id}.title`)}</h5>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">{$_(`video.updated`)} {video.date}</small>
-                    </div>
+<!--                    <div class="card-footer">-->
+<!--                        <small class="text-muted">{$_(`video.updated`)} {video.date}</small>-->
+<!--                    </div>-->
                 </div>
             </div>
         {/each}

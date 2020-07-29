@@ -10,9 +10,9 @@
     "language": "LANGUAGE",
     "videos": {
       "title": "VIDEOS",
-      "game": "Game",
-      "song": "Song",
-      "relax": "Relax"
+      "game": "Music activities",
+      "song": "Songs",
+      "relax": "Relaxing music"
     },
     "game": {
       "title": "GAMES",
