@@ -13,7 +13,7 @@ Libraries used:
 
 ```bash
 $ cd src/
-$ gc -b whatever-new
+$ gco -b whatever-new
 $ npm i
 $ npm run export
 $ gs
