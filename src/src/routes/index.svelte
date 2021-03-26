@@ -58,7 +58,7 @@
     </div>
 </div>
 
-<div class="container jumbotron">
+<!-- <div class="container jumbotron">
     <h1>Subscribe to the newsletter</h1>
     <div id="newsletter"></div>
-</div>
+</div> -->
