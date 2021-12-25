@@ -9,7 +9,7 @@ export default () =>
     .filter(file => file[0] !== '.' && path.extname(file) === '.yml')
     .map(file => {
       const markdown = fs.readFileSync(`data/video/${file}`, 'utf-8');
-      const parsed = yaml.safeLoad(markdown);
+      const parsed = yaml.load(markdown);
       marked.setOptions({
         gfm: true,
         headerIds: true
